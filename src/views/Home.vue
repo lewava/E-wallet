@@ -1,14 +1,13 @@
 <template>
-  <div class="home">
   <div class="container">
     <h1><span>E-</span>wallet</h1>
-    <Card :cards="cards" />
-    <CardStack />
+    <p>Active card</p>
+    <Card :card="card"/>
     <div>
       <button @click="changePage">Add card</button>
-      <button @click='deleteCard' class="delete">Remove card</button>
+      <button @click="deleteCard" class="delete">Remove card</button>
     </div>
-  </div>
+    <CardStack @sendData="getData" />
   </div>
 </template>
 
@@ -21,15 +20,7 @@ export default {
 
   data() {
     return {
-      cards: [
-        {
-          holder: "Leon Wass Vallin",
-          vendor: "Nordea",
-          number: "1235 5678 9101 1123",
-          validMonth: "12",
-          validYear: "5",
-        },
-      ],
+      card: this.$root.$data.cards[0]
     };
   },
   methods: {
@@ -37,8 +28,16 @@ export default {
       this.$router.push({ name: "AddCard" });
     },
     deleteCard() {
-      
-    }
+      this.$root.$data.cards.shift();
+      this.card = this.$root.$data.cards[0];
+    },
+    getData(data) {
+      const oldActiveCard = this.card
+      const newActiveCard = this.$root.$data.cards[data]
+      this.$root.$data.cards.splice(data, 1)
+      this.$root.$data.cards.push(oldActiveCard)
+      this.card = newActiveCard
+    },
   },
 };
 </script>
@@ -59,8 +58,15 @@ h1 {
 span {
   color: #00ce89;
 }
+p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color: rgb(70, 69, 69);
+}
 button {
-  margin: 20px 5px;
+  margin: 50px 5px;
   background: #00ce89;
   color: white;
   padding: 15px 0;

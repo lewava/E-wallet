@@ -9,20 +9,7 @@
 <script>
 import CardForm from "../components/CardForm.vue";
 
-export default {
-  components: { CardForm },
-  data() {
-    return {
-      cards: []
-    }
-  },
-  methods: {
-    getData(e) {
-      this.cards.push(e)
-      console.log(this.cards)
-    },
-  },
-};
+export default { components: { CardForm } };
 </script>
 
 <style scoped>

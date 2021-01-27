@@ -1,71 +1,69 @@
 <template>
-  <div class="card">
-    <div class="top">
-      <div>
-        <img src="../assets/wifi.png" />
-        <img src="../assets/card-icon.png" />
+    <div class="card">
+      <div class="top">
+        <div>
+          <img src="../assets/wifi.png" />
+          <img src="../assets/card-icon.png" />
+        </div>
+        <h3>{{ card.vendor }}</h3>
       </div>
-      <h3>{{ vendor }}</h3>
+      <h2>{{ card.number }}</h2>
+      <div class="bottom">
+        <p>
+          <span>Cardholder name</span> <br />
+          {{ card.holder }}
+        </p>
+        <p class="right">
+          <span>Valid thru</span> <br />
+          {{ card.month }}/{{ card.year }}
+        </p>
+      </div>
     </div>
-    <h2>{{ number }}</h2>
-    <div class="bottom">
-      <p>
-        <span>Cardholder name</span> <br />
-        {{ holder }}
-      </p>
-      <p class="right">
-        <span>Valid thru</span> <br />
-        {{ date }}
-      </p>
-    </div>
-  </div>
 </template>
 
 <script>
 export default {
-  props: ["cards"],
-
-  data() {
-    return {
-      holder: "Leon Wass Vallin",
-      vendor: "Nordea",
-      number: "1235 5678 9101 1123",
-      date: "03/22",
-    };
-  },
+  props: ["card"],
 };
 </script>
 
-<style scoped>
+<style>
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 420px;
-  background: radial-gradient(circle, rgba(166,166,166,1) 0%, rgba(238,238,238,1) 0%, rgba(166,166,166,1) 100%);
+  width: 400px;
+  height: 205px;
+  background: radial-gradient(
+    circle,
+    rgba(166, 166, 166, 1) 0%,
+    rgba(238, 238, 238, 1) 0%,
+    rgba(166, 166, 166, 1) 100%
+  );
+  margin: 0 auto;
   color: black;
   padding: 20px;
-  box-sizing: border-box;
   border-radius: 10px;
 }
 h2 {
   font-family: "Electrolize", sans-serif;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
   color: #000000;
   margin: 10px 0;
+  letter-spacing: 5px;
 }
 .bottom {
   display: flex;
   justify-content: space-between;
 }
 p {
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   margin: 0;
   text-transform: uppercase;
+  text-align: left;
 }
 p span {
   font-size: 12px;
@@ -85,6 +83,7 @@ img {
 }
 h3 {
   font-size: 24px;
-   color:  #00ce89;
+  color: #00ce89;
+  margin: 0;
 }
 </style>

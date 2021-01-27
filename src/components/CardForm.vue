@@ -23,7 +23,7 @@
 
     <form @submit.prevent="addCard">
       <label>Card Number</label>
-      <input type="text" v-mask="'#### #### #### ####'" v-model="number" />
+      <input type="text" v-mask="'#### #### #### ####'" v-model="number" required />
       <label>Cardholder name</label>
       <input type="text" required placeholder="Name" v-model="holder" />
 
@@ -101,64 +101,6 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 400px;
-  height: 205px;
-  background: radial-gradient(
-    circle,
-    rgba(166, 166, 166, 1) 0%,
-    rgba(238, 238, 238, 1) 0%,
-    rgba(166, 166, 166, 1) 100%
-  );
-  margin: 0 auto;
-  color: black;
-  padding: 20px;
-  border-radius: 10px;
-}
-h2 {
-  font-family: "Electrolize", sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  text-align: center;
-  color: #000000;
-  margin: 10px 0;
-  letter-spacing: 5px;
-}
-.bottom {
-  display: flex;
-  justify-content: space-between;
-}
-p {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  margin: 0;
-  text-transform: uppercase;
-  text-align: left;
-}
-p span {
-  font-size: 12px;
-  color: rgb(80, 80, 80);
-  font-weight: 400;
-}
-.right {
-  text-align: end;
-}
-img {
-  width: 50px;
-  display: block;
-}
-.top {
-  display: flex;
-  justify-content: space-between;
-}
-h3 {
-  font-size: 24px;
-  color: #00ce89;
-  margin: 0;
-}
 form {
   padding: 20px;
   border-radius: 10px;
