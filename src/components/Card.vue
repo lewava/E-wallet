@@ -1,24 +1,24 @@
 <template>
-    <div class="card">
-      <div class="top">
-        <div>
-          <img src="../assets/wifi.png" />
-          <img src="../assets/card-icon.png" />
-        </div>
-        <h3>{{ card.vendor }}</h3>
+  <div class="card">
+    <div class="top">
+      <div>
+        <img src="../assets/wifi.png" />
+        <img src="../assets/card-icon.png" />
       </div>
-      <h2>{{ card.number }}</h2>
-      <div class="bottom">
-        <p>
-          <span>Cardholder name</span> <br />
-          {{ card.holder }}
-        </p>
-        <p class="right">
-          <span>Valid thru</span> <br />
-          {{ card.month }}/{{ card.year }}
-        </p>
-      </div>
+      <h3>{{ card.vendor }}</h3>
     </div>
+    <h2>{{ card.number }}</h2>
+    <div class="bottom">
+      <p>
+        <span>Cardholder name</span> <br />
+        {{ card.holder }}
+      </p>
+      <p class="right">
+        <span>Valid thru</span> <br />
+        {{ card.month }}/{{ card.year }}
+      </p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -44,6 +44,7 @@ export default {
   color: black;
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 h2 {
   font-family: "Electrolize", sans-serif;

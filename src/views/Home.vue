@@ -2,12 +2,12 @@
   <div class="container">
     <h1><span>E-</span>wallet</h1>
     <p>Active card</p>
-    <Card :card="card"/>
+    <Card :card="card" />
+    <CardStack @sendData="getData" />
     <div>
       <button @click="changePage">Add card</button>
       <button @click="deleteCard" class="delete">Remove card</button>
     </div>
-    <CardStack @sendData="getData" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 
   data() {
     return {
-      card: this.$root.$data.cards[0]
+      card: this.$root.$data.cards[0],
     };
   },
   methods: {
@@ -32,11 +32,11 @@ export default {
       this.card = this.$root.$data.cards[0];
     },
     getData(data) {
-      const oldActiveCard = this.card
-      const newActiveCard = this.$root.$data.cards[data]
-      this.$root.$data.cards.splice(data, 1)
-      this.$root.$data.cards.push(oldActiveCard)
-      this.card = newActiveCard
+      const oldActiveCard = this.card;
+      const newActiveCard = this.$root.$data.cards[data];
+      this.$root.$data.cards.splice(data, 1);
+      this.$root.$data.cards.push(oldActiveCard);
+      this.card = newActiveCard;
     },
   },
 };

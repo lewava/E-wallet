@@ -23,7 +23,12 @@
 
     <form @submit.prevent="addCard">
       <label>Card Number</label>
-      <input type="text" v-mask="'#### #### #### ####'" v-model="number" required />
+      <input
+        type="text"
+        v-mask="'#### #### #### ####'"
+        v-model="number"
+        required
+      />
       <label>Cardholder name</label>
       <input type="text" required placeholder="Name" v-model="holder" />
 
@@ -93,6 +98,10 @@ export default {
         month: this.month,
         year: this.year,
       };
+      if (this.$root.$data.cards.lenght > 8) {
+        alert("You can only have a maximum of 8 cards in your wallet.");
+        return;
+      }
       this.$root.$data.cards.push(newCard);
       this.$router.push("/");
     },

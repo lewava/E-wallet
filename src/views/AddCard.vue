@@ -2,7 +2,7 @@
   <div class="container">
     <h1><span>Add</span> new card</h1>
     <p>New card</p>
-    <CardForm @send="getData" />
+    <CardForm />
   </div>
 </template>
 

@@ -1,6 +1,12 @@
 <template>
   <div class="stack">
-    <div class="card" v-for="(card, index) in cards" :key="index" @click="changeCard" :id="[`${index}`]">
+    <div
+      class="card"
+      v-for="(card, index) in cards"
+      :key="index"
+      @click="changeCard"
+      :id="[`${index}`]"
+    >
       <div class="top">
         <div>
           <img src="../assets/wifi.png" />
@@ -27,14 +33,14 @@
 export default {
   data() {
     return {
-      cards: this.$root.$data.cards
+      cards: this.$root.$data.cards,
     };
   },
   methods: {
     changeCard(e) {
-      this.$emit("sendData", e.currentTarget.id)
-    }
-  }
+      this.$emit("sendData", e.currentTarget.id);
+    },
+  },
 };
 </script>
 
@@ -43,8 +49,8 @@ export default {
   position: relative;
   top: 430px;
   right: 220px;
-  padding-bottom: 500px;
-  background: pink;
+  padding-bottom: 350px;
+  background: green;
 }
 .card:nth-child(1) {
   display: none;
