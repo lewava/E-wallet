@@ -3,11 +3,11 @@
     <h1><span>E-</span>wallet</h1>
     <p>Active card</p>
     <Card :card="card" />
+    <CardStack @sendData="getData" />
     <div class="button-container">
       <button @click="changePage">Add card</button>
       <button @click="deleteCard" class="delete">Remove card</button>
     </div>
-    <CardStack @sendData="getData" />
   </div>
 </template>
 

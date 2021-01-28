@@ -45,40 +45,8 @@ export default {
 </script>
 
 <style scoped>
-.stack {
-  position: relative;
-  top: 430px;
-  right: 220px;
-}
-.card:nth-child(1) {
-  display: none;
-}
-.card:nth-child(2) {
-  position: absolute;
-  top: -420px;
-}
-.card:nth-child(3) {
-  position: absolute;
-  top: -360px;
-}
-.card:nth-child(4) {
-  position: absolute;
-  top: -300px;
-}
-.card:nth-child(5) {
-  position: absolute;
-  top: -240px;
-}
-.card:nth-child(6) {
-  position: absolute;
-  top: -180px;
-}
-.card:nth-child(7) {
-  position: absolute;
-  top: -120px;
-}
-.card:nth-child(8) {
-  position: absolute;
-  top: -60px;
+.card {
+  position: sticky;
+  margin-top: -200px;
 }
 </style>

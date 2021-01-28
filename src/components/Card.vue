@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card active">
     <div class="top">
       <div>
         <img src="../assets/wifi.png" />
@@ -86,5 +86,8 @@ h3 {
   font-size: 24px;
   color: #00ce89;
   margin: 0;
+}
+.active {
+  margin-bottom: 240px;
 }
 </style>
