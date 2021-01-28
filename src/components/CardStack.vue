@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style scoped>
+.stack {
+  margin-top: 210px;
+}
 .card {
   position: sticky;
   margin-top: -200px;

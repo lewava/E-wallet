@@ -1,39 +1,41 @@
 <template>
   <div class="container">
-    <h1><span>Add</span> new card</h1>
-    <p>New card</p>
-    <CardForm />
+    <Top :text="text" />
+    <Card :card="card" />
+    <CardForm @getCard="updateCard" />
   </div>
 </template>
 
 <script>
+import Top from "../components/Top.vue";
+import Card from "../components/Card.vue";
 import CardForm from "../components/CardForm.vue";
+
 export default {
-  components: { CardForm },
+  components: { Top, Card, CardForm },
+  data() {
+    return {
+      text: ["Add ", "new card", "New Card"],
+      card: {
+        holder: "",
+        vendor: "",
+        number: "",
+        month: "MM",
+        year: "YY",
+      },
+    };
+  },
+  methods: {
+    updateCard(card) {
+      this.card = card;
+    },
+  },
 };
 </script>
 
 <style scoped>
-h1 {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgb(82, 80, 80);
-  margin: 20px 0 40px 0;
-}
-h1 span {
-  font-family: "Roboto", sans-serif;
-  color: #00ce89;
-}
-p {
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0;
-  color: rgb(70, 69, 69);
-}
 .container {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
 }
 </style>

@@ -1,26 +1,5 @@
 <template>
   <div>
-    <div class="card">
-      <div class="top">
-        <div>
-          <img src="../assets/wifi.png" />
-          <img src="../assets/card-icon.png" />
-        </div>
-        <h3>{{ vendor }}</h3>
-      </div>
-      <h2>{{ number }}</h2>
-      <div class="bottom">
-        <p>
-          <span>Cardholder name</span> <br />
-          {{ holder }}
-        </p>
-        <p class="right">
-          <span>Valid thru</span> <br />
-          {{ month }}/{{ year }}
-        </p>
-      </div>
-    </div>
-
     <form @submit.prevent="addCard">
       <label>Card Number</label>
       <input
@@ -28,14 +7,15 @@
         v-mask="'#### #### #### ####'"
         v-model="number"
         required
+        @keyup="updateCard"
       />
       <label>Cardholder name</label>
-      <input type="text" required placeholder="Name" v-model="holder" />
+      <input type="text" required v-model="holder" @keyup="updateCard" />
 
       <div class="small">
         <div>
           <label>Month</label>
-          <select v-model="month">
+          <select v-model="month" @change="updateCard">
             <option disabled selected></option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -53,7 +33,7 @@
         </div>
         <div>
           <label>Year</label>
-          <select v-model="year">
+          <select v-model="year" @change="updateCard">
             <option disabled selected></option>
             <option value="21">21</option>
             <option value="22">21</option>
@@ -65,7 +45,7 @@
       </div>
 
       <label>Vendor</label>
-      <select v-model="vendor">
+      <select v-model="vendor" @change="updateCard">
         <option disabled selected></option>
         <option value="Nordea">Nordea</option>
         <option value="SEB">SEB</option>
@@ -90,6 +70,16 @@ export default {
     };
   },
   methods: {
+    updateCard() {
+      const updatedCard = {
+        holder: this.holder,
+        vendor: this.vendor,
+        number: this.number,
+        month: this.month,
+        year: this.year,
+      };
+      this.$emit("getCard", updatedCard);
+    },
     addCard() {
       const newCard = {
         holder: this.holder,
@@ -105,7 +95,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 form {
   padding: 20px;
   border-radius: 10px;
@@ -121,6 +111,7 @@ label {
   font-weight: bold;
   letter-spacing: 1px;
   margin: 10px 0;
+  text-align: left;
 }
 input,
 select {

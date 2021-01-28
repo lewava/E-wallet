@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <h1><span>E-</span>wallet</h1>
-    <p>Active card</p>
+    <Top :text="text" />
     <Card :card="card" />
     <CardStack @sendData="getData" />
     <div class="button-container">
@@ -12,15 +11,17 @@
 </template>
 
 <script>
+import Top from "../components/Top.vue";
 import Card from "../components/Card.vue";
 import CardStack from "../components/CardStack.vue";
 
 export default {
-  components: { Card, CardStack },
+  components: { Card, CardStack, Top },
 
   data() {
     return {
       card: this.$root.$data.cards[0],
+      text: ["E-", "wallet", "Active card"],
     };
   },
   methods: {
@@ -49,21 +50,6 @@ export default {
   align-items: center;
   max-width: 700px;
   margin: 0 auto;
-}
-h1 {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  color: rgb(82, 80, 80);
-}
-span {
-  color: #00ce89;
-}
-p {
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0;
-  color: rgb(70, 69, 69);
 }
 button {
   margin: 10px 5px;
