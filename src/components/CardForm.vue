@@ -95,7 +95,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 form {
   padding: 20px;
   border-radius: 10px;
