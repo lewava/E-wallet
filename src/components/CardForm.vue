@@ -98,8 +98,9 @@ export default {
         month: this.month,
         year: this.year,
       };
-      if (this.$root.$data.cards.lenght > 8) {
+      if (this.$root.$data.cards.length > 7) {
         alert("You can only have a maximum of 8 cards in your wallet.");
+        this.$router.push("/");
         return;
       }
       this.$root.$data.cards.push(newCard);

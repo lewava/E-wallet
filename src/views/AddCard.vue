@@ -8,8 +8,9 @@
 
 <script>
 import CardForm from "../components/CardForm.vue";
-
-export default { components: { CardForm } };
+export default {
+  components: { CardForm },
+};
 </script>
 
 <style scoped>

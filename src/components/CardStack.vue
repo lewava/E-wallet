@@ -49,8 +49,6 @@ export default {
   position: relative;
   top: 430px;
   right: 220px;
-  padding-bottom: 350px;
-  background: green;
 }
 .card:nth-child(1) {
   display: none;

@@ -3,11 +3,11 @@
     <h1><span>E-</span>wallet</h1>
     <p>Active card</p>
     <Card :card="card" />
-    <CardStack @sendData="getData" />
-    <div>
+    <div class="button-container">
       <button @click="changePage">Add card</button>
       <button @click="deleteCard" class="delete">Remove card</button>
     </div>
+    <CardStack @sendData="getData" />
   </div>
 </template>
 
@@ -66,7 +66,7 @@ p {
   color: rgb(70, 69, 69);
 }
 button {
-  margin: 50px 5px;
+  margin: 10px 5px;
   background: #00ce89;
   color: white;
   padding: 15px 0;
@@ -79,5 +79,8 @@ button {
 }
 button.delete {
   background: #dc143c;
+}
+.button-container {
+  display: flex;
 }
 </style>
