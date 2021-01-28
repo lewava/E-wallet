@@ -49,4 +49,7 @@ export default {
   position: sticky;
   margin-top: -200px;
 }
+.card:nth-child(1) {
+  display: none;
+}
 </style>
