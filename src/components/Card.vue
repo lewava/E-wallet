@@ -73,7 +73,7 @@ export default {
   font-weight: 400;
 }
 .right {
-  text-align: end;
+  text-align: right !important;
 }
 .card img {
   width: 50px;
