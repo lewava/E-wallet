@@ -99,9 +99,10 @@ export default {
 form {
   padding: 20px;
   border-radius: 10px;
-  background: #eee;
+  background: rgb(204, 204, 204);
   margin: 30px auto;
   max-width: 400px;
+  box-shadow: 4px 5px 12px -3px rgba(0, 0, 0, 0.68);
 }
 label {
   display: block;
@@ -141,5 +142,6 @@ form button {
   font-size: 16px;
   cursor: pointer;
   font-weight: bold;
+  outline: none;
 }
 </style>

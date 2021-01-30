@@ -45,8 +45,9 @@ export default {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+  box-shadow: 4px 5px 12px -3px rgba(0, 0, 0, 0.68);
 }
-h2 {
+.card h2 {
   font-family: "Electrolize", sans-serif;
   font-weight: bold;
   font-size: 30px;
@@ -59,14 +60,14 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-p {
+.card p {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   margin: 0;
   text-transform: uppercase;
   text-align: left;
 }
-p span {
+.card p span {
   font-size: 12px;
   color: rgb(80, 80, 80);
   font-weight: 400;
@@ -74,7 +75,7 @@ p span {
 .right {
   text-align: end;
 }
-img {
+.card img {
   width: 50px;
   display: block;
 }
@@ -82,7 +83,7 @@ img {
   display: flex;
   justify-content: space-between;
 }
-h3 {
+.card h3 {
   font-size: 24px;
   color: #00ce89;
   margin: 0;

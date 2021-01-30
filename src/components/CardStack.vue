@@ -1,7 +1,7 @@
 <template>
   <div class="stack">
     <div
-      class="card"
+      class="card noShadow"
       v-for="(card, index) in cards"
       :key="index"
       @click="changeCard"
@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style scoped>
+.noShadow {
+  box-shadow: 1px 6px 15px -9px rgba(0, 0, 0, 0.64);
+}
 .stack {
   margin-top: 210px;
 }
