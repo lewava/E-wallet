@@ -15,7 +15,7 @@
       <div class="small">
         <div>
           <label>Month</label>
-          <select v-model="month" @change="updateCard">
+          <select v-model="month" @change="updateCard" required>
             <option disabled selected></option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -33,7 +33,7 @@
         </div>
         <div>
           <label>Year</label>
-          <select v-model="year" @change="updateCard">
+          <select v-model="year" @change="updateCard" required>
             <option disabled selected></option>
             <option value="21">21</option>
             <option value="22">21</option>
@@ -45,7 +45,7 @@
       </div>
 
       <label>Vendor</label>
-      <select v-model="vendor" @change="updateCard">
+      <select v-model="vendor" @change="updateCard" required>
         <option disabled selected></option>
         <option value="Nordea">Nordea</option>
         <option value="SEB">SEB</option>
