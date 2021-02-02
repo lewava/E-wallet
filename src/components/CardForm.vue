@@ -47,10 +47,10 @@
       <label>Vendor</label>
       <select v-model="vendor" @change="updateCard" required>
         <option disabled selected></option>
-        <option value="Nordea">Nordea</option>
-        <option value="SEB">SEB</option>
-        <option value="Swedbank">Swedbank</option>
-        <option value="Handelsbanken">Handelsbanken</option>
+        <option value="bitcoin">Bitcoin Inc</option>
+        <option value="blockchain">Blockchain Inc</option>
+        <option value="evil">Evil Corp</option>
+        <option value="ninja">Ninja Bank</option>
       </select>
 
       <button>Add Card</button>

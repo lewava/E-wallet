@@ -14,28 +14,28 @@ new Vue({
       cards: [
         {
           holder: "Leon Wass Vallin",
-          vendor: "SEB",
+          vendor: "bitcoin",
           number: "1111 1111 1111 1111",
           month: "01",
           year: "21",
         },
         {
           holder: "Leon Wass Vallin",
-          vendor: "Swedbank",
+          vendor: "blockchain",
           number: "2222 2222 2222 2222",
           month: "02",
           year: "22",
         },
         {
           holder: "Leon Wass Vallin",
-          vendor: "Nordea",
+          vendor: "evil",
           number: "3333 3333 3333 3333",
           month: "03",
           year: "23",
         },
         {
           holder: "Leon Wass Vallin",
-          vendor: "Handelsbanken",
+          vendor: "ninja",
           number: "4444 4444 4444 4444",
           month: "04",
           year: "24",

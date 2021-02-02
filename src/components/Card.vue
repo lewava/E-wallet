@@ -1,11 +1,38 @@
 <template>
-  <div class="card">
+  <div
+    class="card"
+    :class="{
+      bitcoin: card.vendor === 'bitcoin',
+      blockchain: card.vendor === 'blockchain',
+      evil: card.vendor === 'evil',
+      ninja: card.vendor === 'ninja',
+    }"
+  >
     <div class="top">
       <div>
-        <img src="../assets/wifi.png" />
-        <img src="../assets/card-icon.png" />
+        <img v-if="card.vendor === 'bitcoin'" src="../assets/chip-dark.svg" />
+        <img v-else src="../assets/chip-light.svg" />
       </div>
-      <h3>{{ card.vendor }}</h3>
+      <img
+        class="logo"
+        v-if="card.vendor === 'bitcoin'"
+        src="../assets/vendor-bitcoin.svg"
+      />
+      <img
+        class="logo"
+        v-else-if="card.vendor === 'blockchain'"
+        src="../assets/vendor-blockchain.svg"
+      />
+      <img
+        class="logo"
+        v-else-if="card.vendor === 'evil'"
+        src="../assets/vendor-evil.svg"
+      />
+      <img
+        class="logo"
+        v-else-if="card.vendor === 'ninja'"
+        src="../assets/vendor-ninja.svg"
+      />
     </div>
     <h2>{{ card.number }}</h2>
     <div class="bottom">
@@ -83,9 +110,51 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.card h3 {
-  font-size: 24px;
-  color: #00ce89;
-  margin: 0;
+.logo {
+  height: 40px;
+  width: 40px;
+}
+.bitcoin {
+  background-color: #ef5734;
+  background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+}
+.blockchain {
+  background-color: #6c33a3;
+  background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%);
+}
+.blockchain h2 {
+  color: white;
+}
+.blockchain p {
+  color: white;
+}
+.blockchain p span {
+  color: rgb(172, 169, 169);
+}
+.evil {
+  background-color: #ad2f26;
+  background-image: linear-gradient(147deg, #ad2f26 0%, #99201c 74%);
+}
+.evil h2 {
+  color: white;
+}
+.evil p {
+  color: white;
+}
+.evil p span {
+  color: rgb(172, 169, 169);
+}
+.ninja {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+}
+.ninja h2 {
+  color: white;
+}
+.ninja p {
+  color: white;
+}
+.ninja p span {
+  color: rgb(172, 169, 169);
 }
 </style>
